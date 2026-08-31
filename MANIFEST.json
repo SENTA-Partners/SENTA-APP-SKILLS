@@ -23,8 +23,17 @@
       "owner": "data-team"
     }
   ],
+  "recipes": [],
+
   "$notes": {
     "tiers": "Which app tiers receive the skill. 'consumer' = the ~139 viewer seats, 'pro' = the ~13 analyst seats.",
-    "owner": "Who reviews changes to it. Matches CODEOWNERS."
+    "owner": "Who reviews changes to it. Matches CODEOWNERS.",
+    "recipes": [
+      "Ids from recipes/, without the .json. Same gate as skills: a file present in that",
+      "directory but absent from this list is not shipped. See recipes/README.md.",
+      "",
+      "A recipe bypasses the app's methodology gate — the review happened here instead, in",
+      "the pull request — so the build refuses to publish one without a named approvedBy."
+    ]
   }
 }
