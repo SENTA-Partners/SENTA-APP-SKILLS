@@ -1,0 +1,24 @@
+{
+  "$comment": [
+    "The publication allowlist. The app build vendors EXACTLY what is listed here.",
+    "A skill present in skills/ but absent from this file is not shipped — so adding a",
+    "directory is not enough to publish it. Changing this file is the decision to publish,",
+    "and it is reviewable on its own in a pull request.",
+    "",
+    "Keep 'why' populated. Six months from now it is the only record of the intent."
+  ],
+  "manifestVersion": 1,
+  "app": "SENTA Analytics",
+  "publish": [
+    {
+      "skill": "senta-warehouse-analytics",
+      "why": "Routes questions to the right warehouse source and documents the table/column landscape. Without it the agent has no map of the warehouse.",
+      "tiers": ["pro", "consumer"],
+      "owner": "data-team"
+    }
+  ],
+  "$notes": {
+    "tiers": "Which app tiers receive the skill. 'consumer' = the ~139 viewer seats, 'pro' = the ~13 analyst seats.",
+    "owner": "Who reviews changes to it. Matches CODEOWNERS."
+  }
+}

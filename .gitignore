@@ -1,0 +1,5 @@
+# Nothing generated lives here — this repo is source only.
+# Never commit credentials: skills ship to end-user machines in plain text.
+*.p8
+*.pem
+.env
