@@ -1,0 +1,64 @@
+{
+  "$comment": [
+    "A STRUCTURAL EXAMPLE, NOT A WORKING RECIPE.",
+    "",
+    "Leading underscore means this file is never loaded by the app and cannot be published.",
+    "The methodology below is deliberately marked TODO rather than filled in with plausible",
+    "table names — a template that looks authoritative is worse than one that obviously is not,",
+    "because someone will copy it and ship a definition nobody verified.",
+    "",
+    "To write a real recipe: copy this, rename to <id>.json, fill in every TODO against the",
+    "actual warehouse, get it reviewed, and add the id to MANIFEST.json."
+  ],
+
+  "id": "_example",
+  "name": "Monthly charges by provider",
+  "description": "Charges for one practice in one month, broken out by rendering provider.",
+
+  "audience": {
+    "roles": ["practice_admin"],
+    "tiers": []
+  },
+
+  "trigger": "catalogue",
+
+  "parameters": [
+    {
+      "name": "practice",
+      "label": "Practice",
+      "type": "select",
+      "options": ["TODO — the practices this recipe is valid for"]
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "type": "month",
+      "default": "last_complete"
+    }
+  ],
+
+  "prompt": "Report total charges for {{practice}} in {{month}}, broken out by rendering provider. Produce an Excel file with one row per provider, sorted by charges descending, and state the practice total.",
+
+  "methodology": {
+    "metricName": "Charges by rendering provider",
+    "source": "TODO — database and schema",
+    "tables": ["TODO — fully qualified table names"],
+    "joins": [],
+    "dateColumn": "TODO — which date bounds the month, and why that one",
+    "amountColumn": "TODO — which amount column is summed",
+    "formula": "TODO — the calculation in plain language",
+    "grain": "One row per provider per month",
+    "inclusions": ["TODO — what counts"],
+    "exclusions": ["TODO — what is deliberately left out, and why"],
+    "knownTraps": [
+      "TODO — e.g. EMR cutover windows, per-line vs per-unit values, capitated payors"
+    ],
+    "assumptions": ["TODO — anything inferred rather than confirmed"]
+  },
+
+  "review": {
+    "author": null,
+    "approvedBy": null,
+    "approvedAt": null
+  }
+}
