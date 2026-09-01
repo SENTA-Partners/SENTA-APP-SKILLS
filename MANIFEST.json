@@ -15,6 +15,12 @@
       "why": "Routes questions to the right warehouse source and documents the table/column landscape. Without it the agent has no map of the warehouse.",
       "tiers": ["pro", "consumer"],
       "owner": "data-team"
+    },
+    {
+      "skill": "sigma-workbook-authoring",
+      "why": "The app exposes a create_sigma_workbook tool but nothing told the model what a valid spec looks like, so any dashboard request produced an invented shape. Derived from live workbooks in the org.",
+      "tiers": ["pro", "consumer"],
+      "owner": "data-team"
     }
   ],
   "$notes": {
