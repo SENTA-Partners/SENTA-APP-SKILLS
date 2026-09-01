@@ -17,8 +17,8 @@
       "owner": "data-team"
     },
     {
-      "skill": "sigma-workbook-authoring",
-      "why": "The app exposes a create_sigma_workbook tool but nothing told the model what a valid spec looks like, so any dashboard request produced an invented shape. Derived from live workbooks in the org.",
+      "skill": "sigma-workbooks",
+      "why": "The app exposes a create_sigma_workbook tool but nothing told the model what a valid spec looks like, so any dashboard request produced an invented shape. Upstream sigma-authoring plugin v1.12.2 by Thomas Wells (MIT), stripped of scripts/ (Ruby+shell the sandbox cannot run) and generated/ (copies for other AI tools), plus SENTA-ADDENDUM.md for local findings.",
       "tiers": ["pro", "consumer"],
       "owner": "data-team"
     }
