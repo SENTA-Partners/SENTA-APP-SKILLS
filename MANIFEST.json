@@ -1,7 +1,7 @@
 {
   "$comment": [
     "The publication allowlist. The app build vendors EXACTLY what is listed here.",
-    "A skill present in skills/ but absent from this file is not shipped — so adding a",
+    "A skill present in skills/ but absent from this file is not shipped \u2014 so adding a",
     "directory is not enough to publish it. Changing this file is the decision to publish,",
     "and it is reviewable on its own in a pull request.",
     "",
@@ -13,18 +13,32 @@
     {
       "skill": "senta-warehouse-analytics",
       "why": "Routes questions to the right warehouse source and documents the table/column landscape. Without it the agent has no map of the warehouse.",
-      "tiers": ["pro", "consumer"],
+      "tiers": [
+        "pro",
+        "consumer"
+      ],
       "owner": "data-team"
     },
     {
       "skill": "sigma-workbooks",
       "why": "The app exposes a create_sigma_workbook tool but nothing told the model what a valid spec looks like, so any dashboard request produced an invented shape. Upstream sigma-authoring plugin v1.12.2 by Thomas Wells (MIT), stripped of scripts/ (Ruby+shell the sandbox cannot run) and generated/ (copies for other AI tools), plus SENTA-ADDENDUM.md for local findings.",
-      "tiers": ["pro", "consumer"],
+      "tiers": [
+        "pro",
+        "consumer"
+      ],
+      "owner": "data-team"
+    },
+    {
+      "skill": "senta-decks",
+      "why": "Every deck and document the app produces should be board-ready without reformatting. Reverse-engineered by measuring a deck the executive team accepted (APP_Landscape_Platform_Review), then moved onto the brand palette with the contrast arithmetic done: teal #005f7f replaces the navy as the structural colour because theme.css already designates it as chrome, and brand blue #0071ce is data-only since it measures 4.36:1 on the card surface and fails the 4.5 floor. Carries the grid, type scale, table style, editorial rules and the logo asset.",
+      "tiers": [
+        "pro",
+        "consumer"
+      ],
       "owner": "data-team"
     }
   ],
   "recipes": [],
-
   "$notes": {
     "tiers": "Which app tiers receive the skill. 'consumer' = the ~139 viewer seats, 'pro' = the ~13 analyst seats.",
     "owner": "Who reviews changes to it. Matches CODEOWNERS.",
@@ -32,8 +46,8 @@
       "Ids from recipes/, without the .json. Same gate as skills: a file present in that",
       "directory but absent from this list is not shipped. See recipes/README.md.",
       "",
-      "A recipe bypasses the app's methodology gate — the review happened here instead, in",
-      "the pull request — so the build refuses to publish one without a named approvedBy."
+      "A recipe bypasses the app's methodology gate \u2014 the review happened here instead, in",
+      "the pull request \u2014 so the build refuses to publish one without a named approvedBy."
     ]
   }
 }
