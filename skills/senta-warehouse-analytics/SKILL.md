@@ -40,6 +40,11 @@ silently returning zeros. Routing comes before SQL, every time.
    AR days, net collection %, RVUs, new patients), lay out: source, tables, amount/date
    columns, formula, grain, inclusions/exclusions, and known gotchas. Then ask "is this the
    definition you want?" Skip only if the user already specified the exact definition.
+   **Check `references/metric_definitions.md` first** — visits, charges, collections, RVUs,
+   new patients, referrals, budget vs actual and doc days already have a canonical rule
+   there, measured against the data. Propose *that* rule rather than inventing one. Two of
+   these differ deliberately from the semantic view Cortex Analyst uses, so if a number is
+   being reconciled against Cortex, read the reasons before conceding yours is wrong.
 4. **Read the source's reference file** — `references/senta_core.md`,
    `references/legacy_and_external.md`, or `references/modmed/` — and check the documented
    traps. Most of these tables have at least one way of silently producing a wrong number.
@@ -56,6 +61,7 @@ silently returning zeros. Routing comes before SQL, every time.
 | File | Read when |
 |---|---|
 | `references/source_routing.md` | **Every question.** Question type → database/schema. |
+| `references/metric_definitions.md` | **Every named metric.** The canonical rule for visits, charges, collections, RVUs, new patients, referrals, budget vs actual, doc days — plus where the semantic view is wrong. |
 | `references/warehouse_map.md` | Locating anything; understanding the pipeline and what a schema is for. |
 | `references/practice_registry.md` | Any practice-specific or cross-cutover question. Codes, firm ids, EMR history. |
 | `references/senta_core.md` | `PRIVATE.CORE` (CAP, APPT_DETAILS, AR_AGING) and `PRIVATE.MODMED`. The workhorses. |
