@@ -26,6 +26,7 @@ The legacy extracts are billing/PM only — there is no clinical data in them at
 
 | Question | Source | Notes |
 |---|---|---|
+| **Any named metric** — visits, charges, collections, RVUs, new patients, referrals, budget vs actual, doc days | `SIGMA_DT_SPINE.VERTEBRAE.CAP_METRICS` | **Read `metric_definitions.md` first — it carries the canonical rule for each.** Agrees with `PRIVATE.CORE.CAP` to the cent; adds pre-computed flags. Charge-line grain, so `COUNT(*)` is wrong for almost every metric. |
 | Provider × CPT × month volume, any practice, crossing a cutover | `PRIVATE.CORE.CAP` | The only cross-EMR spine. `LEGACY_DESIGNATION` flags each row. |
 | Charges / collections / RVUs across eras | `PRIVATE.CORE.CAP` | `TRAN_TYPE` splits Charges vs Payments — sum conditionally. |
 | Appointments, demographics by **office** | `PRIVATE.CORE.APPT_DETAILS` | ~80 real offices. **No Reston ENT rows** — use `PRIVATE.MODMED.APPOINTMENT` there. |
